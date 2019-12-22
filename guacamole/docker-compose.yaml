@@ -1,6 +1,6 @@
----
+
 version: '3'
-  
+
 services:
     guacamole_guacd:
     image: guacamole/guacd:latest
@@ -14,10 +14,10 @@ services:
     volumes:
       - /var/docker/data/guacamole/mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD= # Setze hier ein starkes Passwort
+      - MYSQL_ROOT_PASSWORD=Malermeisterx4gm # Setze hier ein starkes Passwort
       - MYSQL_DATABASE=guacamole_db
       - MYSQL_USER=guacamole_sql
-      - MYSQL_PASSWORD= # Ein anderes Passwort
+      - MYSQL_PASSWORD=malermeisterx4gm # Ein anderes Passwort
 
   guacamole_guacamole:
     image: guacamole/guacamole:latest
@@ -42,7 +42,7 @@ services:
     labels:
       - "traefik.backend=guacamole"
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:guacamoleexample.com Path:/guacamole" # URL entsprechend anpassen!
+      - "traefik.frontend.rule=Host:marthacloud.com.com Path:/guacamole" # URL entsprechend anpassen!
       - "traefik.port=8080"
       - "traefik.docker.network=traefik_proxy"
 

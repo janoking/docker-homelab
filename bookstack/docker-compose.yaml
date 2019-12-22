@@ -9,10 +9,10 @@ services:
     volumes:
       - /var/docker/bookstack/database:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD= # Setze hier ein starkes Passwort
+      - MYSQL_ROOT_PASSWORD=Malermeisterx4gm # Setze hier ein starkes Passwort
       - MYSQL_DATABASE=bookstack
       - MYSQL_USER=bookstack
-      - MYSQL_PASSWORD= # Ein anderes Passwort
+      - MYSQL_PASSWORD=Malermeisterx4gm  # Ein anderes Passwort
 
   # bookstack-db-backup:
   #   image: databack/mysql-backup
@@ -42,11 +42,11 @@ services:
       - DB_HOST=bookstack-db:3306
       - DB_DATABASE=bookstack
       - DB_USERNAME=bookstack
-      - DB_PASSWORD= # Hier das Passwort von MYSQL_PASSWORD aus dem Datenbankcontainer setzen
+      - DB_PASSWORD=Malermeisterx4gm  # Hier das Passwort von MYSQL_PASSWORD aus dem Datenbankcontainer setzen
     labels:
       - "traefik.backend=bookstack"
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:bookstack.example.com" # URL entsprechend anpassen!
+      - "traefik.frontend.rule=Host:wiki.marthacloud.com" # URL entsprechend anpassen!
       - "traefik.port=80"
       - "traefik.docker.network=traefik_proxy"
 

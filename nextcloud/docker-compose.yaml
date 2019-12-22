@@ -10,8 +10,8 @@ services:
     volumes:
       - /var/docker/nextcloud/database:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=Malermeisterx4gm
+      - MYSQL_PASSWORD=Malermeisterx4gm
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
     
@@ -20,13 +20,15 @@ services:
     container_name: nextcloud-app
     restart: always
     volumes: 
-      - /var/docker/nextcloud/app:/var/www/html
+    # - nextcloud:/var/www/html
+      - /media/HDD1/DATA:/usr/local/DATA
+      - /media/HDD1/RAID:/data
     links:
       - nextcloud-db
     labels:
       - "traefik.backend=nextcloud"
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:nextcloud.example.com" # URL entsprechend anpassen!
+      - "traefik.frontend.rule=Host:marthacloud.com" # URL entsprechend anpassen!
       - "traefik.port=80"
       - "traefik.docker.network=traefik_proxy"
     networks:

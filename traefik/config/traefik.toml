@@ -8,9 +8,9 @@ address = ":8080"
   users = ["admin:verschlüsseltespasswort"]
 
 [docker]
-domain = "example.com" # Hier deine Domäne eintragen
+domain = "traefik.marthacloud.com" # Hier deine Domäne eintragen
 watch = true
-exposedbydefault = false
+exposedbydefault = true
 
 [entryPoints]
   [entryPoints.http]
